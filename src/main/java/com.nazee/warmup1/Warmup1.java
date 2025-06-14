@@ -29,6 +29,14 @@ public class Warmup1 {
         return Math.abs(2*(n-21));
     }
 
+    public boolean parrotTrouble(boolean talking, int hour) {
+        if (talking && (hour<7 || hour>20)) {
+            return true;
+        }
+        return false;
+    }
+
+
 
 
 
