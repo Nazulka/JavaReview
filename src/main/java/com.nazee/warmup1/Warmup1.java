@@ -22,6 +22,14 @@ public class Warmup1 {
         return 2*(a+b);
     }
 
+    public int diff21(int n) {
+        if (n <= 21) {
+            return Math.abs(n-21);
+        }
+        return Math.abs(2*(n-21));
+    }
+
+
 
 
 
