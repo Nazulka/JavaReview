@@ -59,6 +59,22 @@ public class Warmup1 {
         }
     }
 
+    public int close10(int a, int b) {
+        if (Math.abs(10-a) > Math.abs(10-b)) {
+            return b;
+        } else if  (Math.abs(10-a) == Math.abs(10-b)) {
+            return 0;
+        }
+        return a;
+    }
+
+    public boolean in3050(int a, int b) {
+        if (((a >=30 && b>=30) && (a <=40 && b<=40)) ||  ((a >=40 && b>=40) && (a <=50 && b<=50))) {
+            return true;
+        }
+        return false;
+    }
+
 
 
 
