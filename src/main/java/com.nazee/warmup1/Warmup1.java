@@ -85,6 +85,21 @@ public class Warmup1 {
         return (count >= 1 && count <= 3);
     }
 
+    public boolean lastDigit(int a, int b) {
+        if ((a%10) == (b%10)) {
+            return true;
+        }
+        return false;
+    }
+
+    public String endUp(String str) {
+        if (str.length() <= 3) return str.toUpperCase();
+        int cut = str.length() - 3;
+        String front = str.substring(0, cut);
+        String back  = str.substring(cut);  // this takes from cut to the end
+
+        return front + back.toUpperCase();
+    }
 
 
 
