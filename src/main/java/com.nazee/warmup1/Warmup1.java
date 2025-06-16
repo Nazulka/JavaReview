@@ -101,6 +101,20 @@ public class Warmup1 {
         return front + back.toUpperCase();
     }
 
+    public String everyNth(String str, int n) {
+        StringBuilder newstr = new StringBuilder();
+        for (int i=0; i<str.length(); i+=n) {
+            newstr.append(str.charAt(i));
+        }
+        return newstr.toString();
+    }
+
+    public String missingChar(String str, int n) {
+        StringBuilder newstr = new StringBuilder(str);
+        newstr.deleteCharAt(n);
+        return newstr.toString();
+    }
+
 
 
 
