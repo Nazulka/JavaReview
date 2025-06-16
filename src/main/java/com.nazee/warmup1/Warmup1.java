@@ -115,6 +115,25 @@ public class Warmup1 {
         return newstr.toString();
     }
 
+    public String frontBack(String str) {
+
+        if (str.length() <= 1) {
+            return str;
+        }
+
+        StringBuilder sb = new StringBuilder(str);
+        int i = 0;
+        int j = str.length() - 1;
+
+        char ci = sb.charAt(0);
+        char cj = sb.charAt(str.length() - 1);
+
+        sb.setCharAt(i, cj);
+        sb.setCharAt(j, ci);
+
+        return sb.toString();
+    }
+
 
 
 
