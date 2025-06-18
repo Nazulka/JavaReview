@@ -134,6 +134,20 @@ public class Warmup1 {
         return sb.toString();
     }
 
+    public String front3(String str) {
+        if (str.length() < 3) {
+            return str+str+str;
+        }
+        String first = str.substring(0, 3);
+        return first+first+first;
+    }
+
+    public String backAround(String str) {
+        String last = str.substring(str.length() - 1);
+        return last + str + last;
+    }
+
+
 
 
 
