@@ -147,6 +147,21 @@ public class Warmup1 {
         return last + str + last;
     }
 
+    public boolean or35(int n) {
+        if (n%3==0 || n%5==0) {
+            return true;
+        } return false;
+
+    }
+    public String front22(String str) {
+        if (str.length()<2) {
+            return str+str+str;
+        }
+        String firstTwo =str.substring(0, 2);
+        return firstTwo +str+firstTwo;
+    }
+
+
 
 
 
