@@ -161,6 +161,23 @@ public class Warmup1 {
         return firstTwo +str+firstTwo;
     }
 
+    public boolean startHi(String str) {
+        if (str.length() < 2) return false;
+
+        String first = str.substring(0, 2);
+        if (first.equals("hi")) {
+            return true;
+        } return false;
+    }
+
+    public boolean icyHot(int temp1, int temp2) {
+        if ((temp1<0 || temp2<0) && (temp1>100 || temp2>100)) {
+            return true;
+        }
+        return false;
+    }
+
+
 
 
 
