@@ -219,9 +219,13 @@ public class Warmup1 {
         if (str.length() >= 2 && str.charAt(1)=='z') {
             result = result + str.charAt(1);
         }
-
         return result;
     }
+
+    public int intMax(int a, int b, int c) {
+        return Math.max(a, Math.max(b, c));
+    }
+
 
 
 
