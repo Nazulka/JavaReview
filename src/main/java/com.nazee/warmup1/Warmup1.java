@@ -226,6 +226,15 @@ public class Warmup1 {
         return Math.max(a, Math.max(b, c));
     }
 
+    public int close10a(int a, int b) {
+        if (Math.abs(10 - a) < Math.abs(10 - b)) {
+            return a;
+        } else if (Math.abs(10 - a) == Math.abs(10 - b)) {
+            return 0;
+        }
+        return b;
+    }
+
 
 
 
