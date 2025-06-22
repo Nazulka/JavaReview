@@ -235,6 +235,22 @@ public class Warmup1 {
         return b;
     }
 
+    public String notString(String str) {
+        String not = "not";
+        if (str.length()>=3 && str.substring(0, 3).equals("not")) {
+            return str;
+        }
+        return not + " " + str;
+    }
+
+    public String stringTimes(String str, int n) {
+        String newStr="";
+        for (int i=0; i<n; i++) {
+            newStr += str;
+        }
+        return newStr;
+    }
+
 
 
 
