@@ -251,6 +251,20 @@ public class Warmup1 {
         return newStr;
     }
 
+    public String frontTimes(String str, int n) {
+        int frontlength = 3;
+        if (frontlength > str.length()) {
+            frontlength = str.length();
+        }
+        String firstThree = str.substring(0, frontlength);
+        String result = "";
+        for (int i=0; i<n; i++) {
+            result += firstThree;
+        }
+        return result;
+
+    }
+
 
 
 
