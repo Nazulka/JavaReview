@@ -196,7 +196,7 @@ public class Warmup1 {
     }
 
     public String delDel(String str) {
-        if (str.length()>=4 && str.substring(1, 4).equals("del")) {
+        if (str.length()>=4 && str.substring(1, 4).contains("del")) {
             return str.substring(0, 1) + str.substring(4);
         }
         return str;
@@ -262,8 +262,23 @@ public class Warmup1 {
             result += firstThree;
         }
         return result;
-
     }
+
+    public int countXX(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.substring(i, i + 2).equals("xx")) {
+                count++;
+            }
+        }
+        return count;
+    }
+// str.substring(i, i + 2) takes two characters: one at i and one at i+1
+    // It checks if those two are "xx"
+    //If so, it increments count
+// Solution notes: the loop is shortened to end at str.length()-1
+// so we can pull out a length 2 substring without going out of bounds.
+// Remember to use equals() to compare strings, not ==.
 
 
 
