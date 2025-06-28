@@ -21,5 +21,19 @@ public String stringBits(String str) {
     return newStr;
 }
 
+public String stringSplosion(String str) {
+    String newStr="";
+    for (int i=0; i<str.length(); i++) {
+        newStr += str.substring(0, i+1);
+    }
+    return newStr;
+}
+// i=0
+// str.substring(0, 1) → "C"
+//newStr = "" + "C" → "C" >> C
+// i=1;
+//str.substring(0, 2) → "Co"
+//newStr = "C" + "Co" → "CCo" >> CCo
+
 
 
