@@ -125,11 +125,23 @@ public String altPairs(String str) {
     for (int i = 0; i < str.length(); i += 4) {
         result.append(str.charAt(i));           // Take index i
         if (i + 1 < str.length()) {
-            result.append(str.charAt(i + 1));   // Take index i+1 if it exists
+            result.append(str.charAt(i + 1));
+            // Take index i+1 if it exists
+        }
+    }
+    return result.toString();
+}
+
+public String stringYak(String str) {
+    StringBuilder result=new StringBuilder();
+    for (int i=0; i<str.length(); i++) {
+        if (i + 2 < str.length() && str.charAt(i) == 'y'
+                && str.charAt(i+2) == 'k') {
+            i+=2;
+        } else {
+            result.append(str.charAt(i));
         }
     }
 
     return result.toString();
 }
-
-
