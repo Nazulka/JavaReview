@@ -1,0 +1,85 @@
+package com.nazee.warmup1;
+
+public class Warmup2a {
+
+    boolean doubleX(String str) {
+        int i = str.indexOf("x");
+        if (i == -1) return false; // no "x" at all
+
+        // Is char at i+1 also an "x"?
+        if (i+1 >= str.length()) return false; // avoid out-of-bounds error
+        return str.substring(i+1, i+2).equals("x");
+    }
+//str.indexOf("x") searches your string and gives you the
+// index (position) of the first occurrence of the letter "x".
+}
+
+public String stringBits(String str) {
+    String newStr="";
+    for (int i=0; i<str.length(); i+=2) {
+        newStr += str.charAt(i);
+    }
+    return newStr;
+}
+
+public String stringSplosion(String str) {
+    String newStr="";
+    for (int i=0; i<str.length(); i++) {
+        newStr += str.substring(0, i+1);
+    }
+    return newStr;
+}
+// i=0
+// str.substring(0, 1) → "C"
+//newStr = "" + "C" → "C" >> C
+// i=1;
+//str.substring(0, 2) → "Co"
+//newStr = "C" + "Co" → "CCo" >> CCo
+
+public String stringSplosion(String str) {
+    StringBuilder result = new StringBuilder();
+
+    for (int i = 0; i < str.length(); i++) {
+        result.append(str.substring(0, i + 1));
+    }
+    return result.toString();
+}
+
+public int last2(String str) {
+    if (str.length() < 2) {
+        return 0;
+    }
+    // Saves the last 2 characters of the string.
+    String last = str.substring(str.length() - 2);
+    int count = 0;
+    for (int i = 0; i < str.length() - 2; i++) {
+// Loop from the start of the string up to the third-to-last character.
+//This ensures we don't include the final 2 characters themselves.
+        String sub = str.substring(i, i + 2);
+//  Gets the current 2-character substring starting at position i.
+        if (sub.equals(last)) {
+            count++;
+        }
+    }
+    return count;
+
+    }
+
+public int arrayCount9(int[] nums) {
+    int count=0;
+    for (int i=0; i<nums.length; i++) {
+        if (nums[i]==9) {
+            count++;
+        }
+    }return count;
+}
+
+public boolean arrayFront9(int[] nums) {
+    int firstFour = Math.min(4, nums.length);
+    for (int i=0; i<firstFour; i++) {
+        if (nums[i]==9) {
+            return true;
+        }
+
+    } return false;
+}
