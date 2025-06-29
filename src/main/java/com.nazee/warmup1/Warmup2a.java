@@ -119,3 +119,17 @@ public String stringX(String str) {
     return start + middle + end;
 }
 
+public String altPairs(String str) {
+    StringBuilder result = new StringBuilder();
+
+    for (int i = 0; i < str.length(); i += 4) {
+        result.append(str.charAt(i));           // Take index i
+        if (i + 1 < str.length()) {
+            result.append(str.charAt(i + 1));   // Take index i+1 if it exists
+        }
+    }
+
+    return result.toString();
+}
+
+
