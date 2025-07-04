@@ -196,6 +196,21 @@ public class Warmup3 {
         // return x.startsWith("xx");
     }
 
+    public int array667b(int[] nums) {
+        int a =0;
+        int b=0;
+        for (int i=0; i<nums.length-1; i++) {
+            int val = nums[i];
+            if ((nums[i] == 6) && nums[i+1]==7 ) {
+                a++;
+            }
+            if ((nums[i] == 6) && nums[i+1]==6 ) {
+                b++;
+            }
+        }
+        return a+b;
+    }
+
 
 
 
