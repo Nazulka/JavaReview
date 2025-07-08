@@ -46,5 +46,45 @@ public class String1 {
         return str.substring(1, str.length()-1);
     }
 
+    public String comboString(String a, String b) {
+        if (a.length()> b.length()) {
+            return b+a+b;
+        } else {
+            return a+b+a;
+        }
+    }
+
+    public String nonStart(String a, String b) {
+        return a.substring(1)+b.substring(1);
+    }
+
+    public String left2(String str) {
+        return str.substring(2) + str.substring(0, 2);
+    }
+
+    public String right2(String str) {
+        String lastTwo = str.substring(str.length()-2);
+        return lastTwo+str.substring(0, str.length()-2);
+    }
+
+    public String theEnd(String str, boolean front) {
+        if (front && !str.isEmpty()) {
+            return str.substring(0, 1);
+        } else {
+            return str.substring(str.length()-1);
+        }
+    }
+    public String withouEnd2(String str) {
+        if (str.length()>=2) {
+            return str.substring(1, str.length()-1);
+        } else if (str.length() ==1) {
+            return str.substring(1);
+        } else {
+            return str;
+        }
+    }
+
+
+
 
 }
