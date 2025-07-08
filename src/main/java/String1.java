@@ -84,6 +84,22 @@ public class String1 {
         }
     }
 
+    public String middleTwo(String str) {
+        int first = str.length()/2;
+        return str.substring(first-1, first+1);
+
+    }
+
+    public boolean endsLy(String str) {
+//        return str.endsWith("ly");
+        if (str.length() >= 2 &&
+                str.charAt(str.length() - 2) == 'l' &&
+                str.charAt(str.length() - 1) == 'y') {
+            return true;
+        }
+        return false;
+    }
+
 
 
 
