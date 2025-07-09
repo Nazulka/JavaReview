@@ -100,7 +100,30 @@ public class String1 {
         return false;
     }
 
+    public String nTwice(String str, int n) {
+        return str.substring(0, n)+str.substring(str.length()-n);
+    }
 
+    public String twoChar(String str, int index) {
+        if (index >= 0 && index + 1 < str.length()) {
+            return str.substring(index, index+2);
+        }
+        return str.substring(0, 2);
+    }
 
+    public String middleThree(String str) {
+        int middle = str.length()/2;
+        if (str.length()%2==1 && str.length()>3) {
+
+        } return str.substring(middle-1, middle+2);
+    }
+
+    public boolean hasBad(String str) {
+        if ((str.length() >= 3 && str.substring(0, 3).equals("bad")) ||
+                (str.length() >= 4 && str.substring(1, 4).equals("bad"))) {
+            return true;
+        }
+        return false;
+    }
 
 }
