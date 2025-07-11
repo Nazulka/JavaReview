@@ -126,4 +126,33 @@ public class String1 {
         return false;
     }
 
+    public String atFirst(String str) {
+        if (str.length()>=2) {
+            return str.substring(0, 2);
+        } else if (str.length() == 1) {
+            return str + "@";
+        } else {
+            return "@@";
+        }
+    }
+
+    public String lastChars(String a, String b) {
+        if (a.isEmpty() && b.isEmpty()) {
+            return "@@";
+        } else if (!a.isEmpty() && !b.isEmpty()) {
+            return a.substring(0, 1) + b.charAt(b.length() - 1);
+        } else {
+            String first = (a.isEmpty()) ? "@" : a.substring(0, 1);
+            String last = (b.isEmpty()) ? "@" : b.substring(b.length() - 1);
+            return first + last;
+        }
+    }
+
+
+
+
+
+
+
+
 }
