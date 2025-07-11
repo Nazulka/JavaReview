@@ -148,6 +148,36 @@ public class String1 {
         }
     }
 
+    public String conCat(String a, String b) {
+        if (a.isEmpty()) return b;
+        if (b.isEmpty()) return a;
+        if (a.charAt(a.length()-1)==b.charAt(0)) {
+            return a+b.substring(1);
+        } else {
+            return a+b;
+        }
+    }
+
+    public String lastTwo(String str) {
+        if (str.length()<2) {
+            return str;
+        } else {
+            return str.substring(0, str.length()-2)+str.charAt(str.length()-1)+str.charAt(str.length()-2);
+        }
+    }
+
+    public String seeColor(String str) {
+        if (str.startsWith("red")) {
+            return "red";
+        } else if (str.startsWith("blue")) {
+            return "blue";
+        } else {
+            return "";
+        }
+    }
+
+
+
 
 
 
