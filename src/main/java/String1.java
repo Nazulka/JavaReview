@@ -183,6 +183,37 @@ public class String1 {
         return false;
     }
 
+    public String minCat(String a, String b) {
+        if (a.length() == b.length()) {
+            return a+b;
+        } else if (a.length() > b.length()) {
+            String trimmedA = a.substring(a.length() - b.length());
+            return trimmedA+b;
+        } else {
+            String trimmedB = b.substring(b.length() - a.length());
+            return a+trimmedB;
+        }
+    }
+
+    public String extraFront(String str) {
+        if (str.length()<2) {
+            return str+str+str;
+        }
+        else {
+            String newStr = str.substring(0, 2);
+            return newStr+newStr+newStr;
+        }
+    }
+
+    public String without2(String str) {
+        if (str.length()>=2 && str.substring(0, 2).equals(str.substring(str.length()-2))) {
+            return str.substring(2);
+        } else {
+            return str;
+        }
+    }
+
+
 
 
 
