@@ -1,7 +1,4 @@
-package com.nazee.warmup1;
-
-public class Warmup2a {
-
+public class Warmup2 {
     boolean doubleX(String str) {
         int i = str.indexOf("x");
         if (i == -1) return false; // no "x" at all
@@ -36,7 +33,7 @@ public String stringSplosion(String str) {
 //str.substring(0, 2) → "Co"
 //newStr = "C" + "Co" → "CCo" >> CCo
 
-public String stringSplosion(String str) {
+public String stringTwospl(String str) {
     StringBuilder result = new StringBuilder();
 
     for (int i = 0; i < str.length(); i++) {
@@ -63,7 +60,7 @@ public int last2(String str) {
     }
     return count;
 
-    }
+}
 
 public int arrayCount9(int[] nums) {
     int count=0;
@@ -144,4 +141,23 @@ public String stringYak(String str) {
     }
 
     return result.toString();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+public void main() {
 }
