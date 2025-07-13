@@ -228,6 +228,32 @@ public class String1 {
         return result.toString();
     }
 
+    public String withoutX(String str) {
+        if (str.isEmpty()) return str;
+        if (str.charAt(0) == 'x') {
+            str = str.substring(1);
+        }
+        if (!str.isEmpty() && str.charAt(str.length() - 1) == 'x') {
+            str = str.substring(0, str.length() - 1);
+        }
+        return str;
+    }
+
+    public String withoutX2(String str) {
+        StringBuilder result = new StringBuilder();
+        if (!str.isEmpty() && str.charAt(0) != 'x') {
+            result.append(str.charAt(0));
+        }
+        if (str.length()>=2 && str.charAt(1) !='x') {
+            result.append(str.substring(1, 2));
+        }
+        if (str.length() > 2) {
+            result.append(str.substring(2));
+        }
+        return result.toString();
+    }
+
+
 
 
 
