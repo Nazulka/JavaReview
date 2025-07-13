@@ -213,6 +213,22 @@ public class String1 {
         }
     }
 
+    public String deFront(String str) {
+        StringBuilder result = new StringBuilder();
+        if (!str.isEmpty() && str.charAt(0) == 'a') {
+            result.append(str.charAt(0));
+        }
+        if (str.length() >= 2 && str.charAt(1) == 'b') {
+            result.append(str.charAt(1));
+        }
+        if (str.length() > 2) {
+            result.append(str.substring(2));
+        }
+
+        return result.toString();
+    }
+
+
 
 
 
