@@ -266,6 +266,16 @@ public class String1 {
         return str.substring(0, 1) + word.substring(1);
     }
 
+    public boolean parrotTrouble2(boolean talking, int hour) {
+        return (talking && (hour<7 || hour>20));
+
+    }
+
+    public boolean loneTeen2(int a, int b) {
+        boolean aTeen = (a>=13 && a<=19);
+        boolean bTeen = (b>=13 && b<=19);
+        return (aTeen && !bTeen || !aTeen && bTeen);
+    }
 
 
 
