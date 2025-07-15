@@ -3,6 +3,10 @@ public class Array1 {
         return nums[0]==6 || nums[nums.length-1]==6;
     }
 
+    public boolean sameFirstLast(int[] nums) {
+        return nums.length>=1 && nums[0]==nums[nums.length-1];
+    }
+
 
 
 
