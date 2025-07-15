@@ -7,6 +7,14 @@ public class Array1 {
         return nums.length>=1 && nums[0]==nums[nums.length-1];
     }
 
+    public int[] makePi() {
+        int[] makePi = new int [3];
+        makePi[0] = 3;
+        makePi[1]=1;
+        makePi[2]=4;
+        return makePi;
+    }
+
 
 
 
