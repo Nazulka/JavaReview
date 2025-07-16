@@ -23,6 +23,18 @@ public class Array1 {
         return nums[0]+nums[1]+nums[2];
     }
 
+    public int[] reverse3(int[] nums) {
+        int start = 0;
+        int end = nums.length - 1;
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        } return nums;
+    }
+
 
 
 
