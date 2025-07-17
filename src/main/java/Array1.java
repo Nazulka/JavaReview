@@ -88,6 +88,44 @@ public class Array1 {
         return result;
     }
 
+    public boolean double23(int[] nums) {
+        int countTwo=0;
+        int countThree=0;
+        for (int num : nums) {
+            if (num == 2) {
+                countTwo++;
+            } else if (num == 3) {
+                countThree++;
+            }
+        }
+        return countTwo >= 2 || countThree >= 2;
+    }
+
+    public int[] fix23(int[] nums) {
+        int[] result = new int[3];
+        for (int i=0; i<nums.length; i++) {
+            result[i]=nums[i];
+            if(nums[i]==2 && nums[i+1] == 3) {
+                nums[i+1]=0;
+            }
+        } return result;
+    }
+
+    public int start1(int[] a, int[] b) {
+        int count =0;
+        if (a.length>0 && a[0]==1) count++;
+        if (b.length>0 && b[0]==1) count++;
+        return count;
+    }
+
+    public int[] biggerTwo(int[] a, int[] b) {
+        int aSum = a[0]+a[1];
+        int bSum= b[0]+b[1];
+        if (aSum==bSum) return a;
+        if (aSum>bSum) return a;
+        else return b;
+    }
+
 
 
 
