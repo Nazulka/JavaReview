@@ -43,6 +43,18 @@ public class Array1 {
         return nums;
     }
 
+    public int sum2(int[] nums) {
+        if (nums.length==0) return 0;
+        if (nums.length>=2) return nums[0]+nums[1];
+        else return nums[0];
+    }
+
+    public int[] middleWay(int[] a, int[] b) {
+        int[] middleSum = new int [2];
+        middleSum[0]=a[1];
+        middleSum[1]=b[1];
+        return middleSum;
+    }
 
 
 
