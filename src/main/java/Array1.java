@@ -64,11 +64,21 @@ public class Array1 {
     }
 
     public boolean has23(int[] nums) {
-        for (int i=0; i<nums.length; i++) {
-            if (nums[i]==2 || nums[i]==3) {
+        for (int num : nums) {
+            if (num == 2 || num == 3) {
                 return true;
             }
-        } return false;
+        }
+        return false;
+    }
+
+    public boolean no23(int[] nums) {
+        for (int num : nums) {
+            if (num == 2 || num == 3) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
