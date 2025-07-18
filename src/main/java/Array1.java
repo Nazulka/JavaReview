@@ -126,6 +126,24 @@ public class Array1 {
         else return b;
     }
 
+    public int[] makeMiddle(int[] nums) {
+        int [] result = new int[2];
+        int middle = nums.length/2;
+        result[0]= nums[middle-1];
+        result[1]=nums[middle];
+        return result;
+    }
+
+    public int[] plusTwo(int[] a, int[] b) {
+        int[] result = new int[4];
+        result[0] = a[0];
+        result[1] = a[1];
+        result[2] = b[0];
+        result[3] = b[1];
+        return result;
+    }
+
+
 
 
 
