@@ -143,7 +143,22 @@ public class Array1 {
         return result;
     }
 
+    public int[] swapEnds(int[] nums) {
+        int start = nums[0];
+        int end = nums[nums.length-1];
+        nums[0] = end;
+        nums[nums.length-1]=start;
+        return nums;
+    }
 
+    public int[] midThree(int[] nums) {
+        int [] result = new int[3];
+        int middle = nums.length/2;
+        result[0]=nums[middle-1];
+        result[1]=nums[middle];
+        result[2]=nums[middle+1];
+        return result;
+    }
 
 
 
