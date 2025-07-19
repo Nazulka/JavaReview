@@ -20,5 +20,24 @@ public class Logic1 {
         else return 2;
     }
 
+    public int sortaSum(int a, int b) {
+        int sum=a+b;
+        if (sum>=10 && sum<=19) return 20;
+        else return sum;
+    }
+
+    public String alarmClock(int day, boolean vacation) {
+        if ((day == 0 || day == 6) && vacation) return "off";
+        if ((day >= 1 && day <= 5) && vacation) return "10:00";
+        if ((day >= 1 && day <= 5) && !vacation) return "7:00";
+        return "10:00"; // weekend and not vacation
+    }
+
+    public boolean love6(int a, int b) {
+        return (a == 6 || b == 6) || (a + b == 6) || Math.abs(a - b) == 6;
+    }
+
+
+
 
 }
