@@ -160,6 +160,29 @@ public class Array1 {
         return result;
     }
 
+    public int maxTriple(int[] nums) {
+        int first = nums[0];
+        int middle = nums[nums.length / 2];
+        int last = nums[nums.length - 1];
+        return Math.max(first, Math.max(middle, last));
+    }
+
+    public boolean unlucky1(int[] nums) {
+        int len = nums.length;
+
+        // Check beginning (index 0 and 1)
+        if (len >= 2 && nums[0] == 1 && nums[1] == 3) return true;
+
+        // Check middle (index 1 and 2)
+        if (len >= 3 && nums[1] == 1 && nums[2] == 3) return true;
+
+        // Check end (last two elements)
+        if (len >= 2 && nums[len - 2] == 1 && nums[len - 1] == 3) return true;
+
+        return false;
+    }
+
+
 
 
 
