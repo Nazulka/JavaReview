@@ -182,6 +182,48 @@ public class Array1 {
         return false;
     }
 
+    public int[] make2(int[] a, int[] b) {
+        int[] result = new int[2];
+        int count = 0;
+        // Fill from a
+        for (int i = 0; i < a.length && count < 2; i++) {
+            result[count] = a[i];
+            count++;
+        }
+        // Fill from b
+        for (int i = 0; i < b.length && count < 2; i++) {
+            result[count] = b[i];
+            count++;
+        }
+        return result;
+    }
+
+    public int[] front11(int[] a, int[] b) {
+        if (a.length>0 && b.length>0) {
+            return new int[] {a[0], b[0]};
+        }
+        else if
+        (b.length>0) {
+            return new int[] {b[0]};
+        }
+        else if (a.length>0) {
+            return new int[] {a[0]};
+        } else {
+            return new int[] {};
+        }
+    }
+
+    public int[] rotateLeft3(int[] nums) {
+        int first = nums[0];
+        nums[0] = nums[1];
+        nums[1] = nums[2];
+        nums[2] = first;
+        return nums;
+    }
+
+
+
+
 
 
 
