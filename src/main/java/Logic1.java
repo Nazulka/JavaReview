@@ -37,6 +37,56 @@ public class Logic1 {
         return (a == 6 || b == 6) || (a + b == 6) || Math.abs(a - b) == 6;
     }
 
+    public boolean in1To10(int n, boolean outsideMode) {
+        return (!outsideMode && (n>=1 && n<=10)) ||
+                (outsideMode && (n<=1 || n>=10));
+    }
+
+    public boolean specialEleven(int n) {
+        return (n%11==0) ||(n%11==1);
+    }
+
+    public boolean more20(int n) {
+        return (n%20==1) || (n%20==2);
+    }
+
+    public boolean old35(int n) {
+        return ((n%3==0) || (n%5==0)) && !((n%3==0) && (n%5==0));
+    }
+
+    public boolean less20(int n) {
+        return (n%20==19) || (n%20==18);
+    }
+
+    public boolean nearTen(int num) {
+        return (num%10==8) || (num%10==2) ||(num%10==9) || (num%10==1) || (num%10==0);
+    }
+
+    public int teenSum(int a, int b) {
+        int sum = a+b;
+        if ((a >=13) && (a <=19) || (b >=13) && (b <=19)) {
+            return 19;
+        } return sum;
+    }
+
+    public boolean answerCell(boolean isMorning, boolean isMom,
+                              boolean isAsleep) {
+        if (isAsleep) return false;
+        return !isMorning || isMom;
+    }
+
+    public boolean twoAsOne(int a, int b, int c) {
+        return (a+b==c)|| (a+c==b) || (c+b==a);
+    }
+
+    public boolean inOrder(int a, int b, int c, boolean bOk) {
+        return ((bOk && (c>b)) || (b>a) && (c>b));
+    }
+
+
+
+
+
 
 
 
