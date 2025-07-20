@@ -83,6 +83,12 @@ public class Logic1 {
         return ((bOk && (c>b)) || (b>a) && (c>b));
     }
 
+    public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+        return ((a<b && b<c) ||
+                (equalOk && a <= b && b <= c));
+    }
+
+
 
 
 
