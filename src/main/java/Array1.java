@@ -221,6 +221,18 @@ public class Array1 {
         return nums;
     }
 
+    public int[] frontPiece(int[] nums) {
+        if (nums.length<2) return nums;
+        else return new int[] {nums[0], nums[1]};
+    }
+
+    public boolean squirrelPlay(int temp, boolean isSummer) {
+        return (temp >= 60 && temp <= 90 && !isSummer) ||
+                (temp >= 60 && temp <= 100 && isSummer);
+    }
+
+
+
 
 
 
