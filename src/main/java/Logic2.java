@@ -30,6 +30,28 @@ public class Logic2 {
         else return n;
     }
 
+    public int roundSum(int a, int b, int c) {
+        return round10(a)+round10(b)+round10(c);
+    }
+
+    public int round10(int num) {
+        int remainder = num % 10;
+
+        if (remainder >=5) return num+(10-remainder);
+        else return num-remainder;
+    }
+
+    public int blackjack(int a, int b) {
+        if (a>21 && b>21) return 0;
+        if (a>21) return b;
+        if (b>21) return a;
+        return (21 - a <= 21 - b) ? a : b;
+        // the above is the same as the below 2 lines
+//        else if (21 - a < 21 - b) return a;
+//        else return b;
+    }
+
+
 
 
 
