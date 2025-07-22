@@ -59,6 +59,19 @@ public class Logic2 {
         return (max - mid) == (mid - min);
     }
 
+    public int makeChocolate(int small, int big, int goal) {
+        int maxBigBars = goal / 5;
+        int bigBarsUsed = Math.min(maxBigBars, big);
+        int remaining = goal - (bigBarsUsed * 5);
+
+        if (remaining <= small) {
+            return remaining; // Number of small bars needed
+        } else {
+            return -1;
+        }
+    }
+
+
 
 
 
