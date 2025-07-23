@@ -31,6 +31,14 @@ public class Map1 {
         return map;
     }
 
+    public Map<String, String> mapAB(Map<String, String> map) {
+        if (map.containsKey("a") && map.containsKey("b")) {
+            String aa = map.get("a");
+            String bb = map.get("b");
+            map.put("ab", aa+bb);
+        }return map;
+    }
+
 
 
 }
