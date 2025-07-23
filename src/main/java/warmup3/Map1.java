@@ -20,5 +20,17 @@ public class Map1 {
         } return map;
     }
 
+    public Map<String, String> mapShare(Map<String, String> map) {
+        if (map.containsKey("a")) {
+            String aValue = map.get("a");
+            map.put("b", aValue);
+            map.remove("c");
+        } else {
+            map.remove("c");
+        }
+        return map;
+    }
+
+
 
 }
