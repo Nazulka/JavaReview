@@ -44,8 +44,19 @@ public class Map1 {
         if (map.containsKey("ice cream")) {
             map.put("ice cream", "cherry");
         } return map;
-
     }
+
+    public Map<String, String> topping2(Map<String, String> map) {
+        if (map.containsKey("ice cream")) {
+            String aValue = map.get("ice cream");
+            map.put("yogurt", aValue);
+        }
+        if (map.containsKey("spinach")) {
+            map.put("spinach", "nuts");
+        }
+        return map;
+    }
+
 
 
 
