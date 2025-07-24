@@ -57,6 +57,46 @@ public class Map1 {
         return map;
     }
 
+    public Map<String, String> topping3(Map<String, String> map) {
+        if (map.containsKey("potato")) {
+            String potatoKey = map.get("potato");
+            map.put("fries", potatoKey);
+        }
+        if (map.containsKey("salad")) {
+            String saladKey = map.get("salad");
+            map.put("spinach", saladKey);
+        }
+        return map;
+    }
+
+    public Map<String, String> mapAB2(Map<String, String> map) {
+
+        if (map.containsKey("a") && map.containsKey("b")) {
+            String aVal = map.get("a");
+            String bVal = map.get("b");
+
+            if (aVal != null && aVal.equals(bVal)) {
+                map.remove("a");
+                map.remove("b");
+            }
+        }
+        return map;
+    }
+
+    public Map<String, String> mapAB3(Map<String, String> map) {
+        if (map.containsKey("a") && map.containsKey("b")) return map;
+        if (map.containsKey("a")) {
+            String aVal = map.get("a");
+            map.put("b", aVal);
+        }
+        else if (map.containsKey("b")) {
+            String bVal = map.get("b");
+            map.put("a", bVal);
+        }
+        return map;
+    }
+
+
 
 
 
