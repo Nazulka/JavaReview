@@ -139,9 +139,12 @@ public String stringYak(String str) {
             result.append(str.charAt(i));
         }
     }
-
     return result.toString();
 }
+
+
+
+
 
 
 

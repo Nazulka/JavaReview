@@ -1,5 +1,3 @@
-package warmup3;
-
 public class Warmup3 {
 
     public class Wuy {

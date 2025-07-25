@@ -1,5 +1,3 @@
-package warmup3;
-
 //Java Map API
 //// Make a new empty map
 //Map<String, String> map = new HashMap<String, String>();
