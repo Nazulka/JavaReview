@@ -16,6 +16,17 @@ public class Map2 {
         return map;
     }
 
+    public Map<String, String> pairs(String[] strings) {
+        Map<String, String> map = new HashMap<>();
+        for (String s:strings) {
+            String first = String.valueOf(s.charAt(0));
+            String last = String.valueOf(s.charAt(s.length() - 1));
+            map.put(first, last);
+        }
+        return map;
+    }
+
+
 
 
 }
