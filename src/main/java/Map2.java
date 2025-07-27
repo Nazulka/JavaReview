@@ -38,6 +38,20 @@ public class Map2 {
         return map;
     }
 
+    public Map<String, String> firstChar(String[] strings) {
+        Map<String, String> map = new HashMap<>();
+        for (String s:strings) {
+            String first = String.valueOf(s.charAt(0));
+            if (map.containsKey(first)) {
+                String last = map.get(first);
+                map.put(first, last+s);
+            } else {
+                map.put(first, s);
+            }
+        }
+        return map;
+    }
+
 
 
 
