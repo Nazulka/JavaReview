@@ -52,6 +52,27 @@ public class Map2 {
         return map;
     }
 
+    public String wordAppend(String[] strings) {
+        StringBuilder result = new StringBuilder();
+        Map<String, Integer> map = new HashMap<>();
+        for (String s : strings) {
+            int count = map.getOrDefault(s, 0);
+            // Get current count (default 0)
+            count++;
+            // Increment count
+            map.put(s, count);
+            // Save updated count
+
+            if (count % 2 == 0) {
+                // If it's the 2nd, 4th, etc time
+                result.append(s);
+                // Append to result
+            }
+        }
+        return result.toString();
+        // Return final result
+    }
+
 
 
 
