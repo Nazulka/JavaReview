@@ -73,6 +73,23 @@ public class Map2 {
         // Return final result
     }
 
+    public Map<String, Boolean> wordMultiple(String[] strings) {
+        Map<String, Boolean> map = new HashMap<>();
+
+        for (String s : strings) {
+            if (map.containsKey(s)) {
+                // We’ve seen this word before — set value to true
+                map.put(s, true);
+            } else {
+                // First time we see this word — set value to false
+                map.put(s, false);
+            }
+        }
+
+        return map;
+    }
+
+
 
 
 
