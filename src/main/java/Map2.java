@@ -85,9 +85,29 @@ public class Map2 {
                 map.put(s, false);
             }
         }
-
         return map;
     }
+
+    public String[] allSwap(String[] strings) {
+        Map<String, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+            String s = strings[i];
+            String first = String.valueOf(s.charAt(0));
+
+            if (map.containsKey(first)) {
+                int prevIndex = map.get(first);
+                String temp = strings[i];
+                strings[i] = strings[prevIndex];
+                strings[prevIndex] = temp;
+                map.remove(first);  // remove so future swaps only happen once per char
+            } else {
+                map.put(first, i);
+            }
+        }
+        return strings;  // <-- Don't forget to return the array!
+    }
+
 
 
 
