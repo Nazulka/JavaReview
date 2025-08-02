@@ -75,6 +75,25 @@ public class LeetCode {
         return null;
     }
 
+    public int finalPositionOfSnake(int n, List<String> commands) {
+        int row=0;
+        int col=0;
+        for (String command : commands) {
+            // think as if it is a one dimensional array
+            if (command.equals("UP")) {
+                row--; // same as -3
+            } else if (command.equals("DOWN")) {
+                row++; // same as +3
+            } else if (command.equals("RIGHT")) {
+                col++; // i++
+            } else if (command.equals("LEFT")) {
+                col--; // i--
+            }
+
+        }
+        return row*n+col;
+    }
+
 
 
 
