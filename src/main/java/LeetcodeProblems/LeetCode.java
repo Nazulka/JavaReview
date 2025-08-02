@@ -13,30 +13,80 @@ public class LeetCode {
         return highest_profit;
     }
 
-        public boolean isAnagram(String s, String t) {
-            if (s.length() != t.length()) {
-                return false;
-            }
-            char[] schars = s.toCharArray();
-            char[] tchars = t.toCharArray();
-            Arrays.sort(schars);
-            Arrays.sort(tchars);
-            return Arrays.equals(schars, tchars);
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
         }
+        char[] schars = s.toCharArray();
+        char[] tchars = t.toCharArray();
+        Arrays.sort(schars);
+        Arrays.sort(tchars);
+        return Arrays.equals(schars, tchars);
+    }
 
-        public int hammingWeight(int n) {
-            int one = 1 << 0;
-            int two = 1 << 1;
-            int three = 1 <<2;
-            int answer = 0;
-            for (int i=0; i<=30; i++) {
-                int bitmask = 1 << i;
-                if ((n & bitmask) >0) {
-                    answer++;
-                }
+    public int hammingWeight(int n) {
+        int one = 1 << 0;
+        int two = 1 << 1;
+        int three = 1 << 2;
+        int answer = 0;
+        for (int i = 0; i <= 30; i++) {
+            int bitmask = 1 << i;
+            if ((n & bitmask) > 0) {
+                // we can also compute
+                // x | y
+                // x ^ y
+                // x >> 1 right shift by one is dividing by 2
+                answer++;
             }
-            return answer;
         }
+        return answer;
+    }
+
+    public int singleNumber(int[] nums) {
+        // XOR operation - exclusive OR
+        // If only one of them is true then is true, otherwise it's false
+        // 0 ^ 0 = 0
+        // 0 ^ 1 = 1
+        // 1 ^ 1 = 0
+        // similar answers will cancel each other out
+        // return the number that appears once
+        int answer = 0;
+        for (int num : nums) {
+            answer = answer ^ num; // answer ^=num;
+        }
+        return answer;
+    }
+
+    public void reverseString1(char[] s) {
+        char[] t = new StringBuilder(new String(s)).reverse().toString().toCharArray();
+        System.arraycopy(t, 0, s, 0, s.length);
+    }
+
+    public String reverseString2(char[] s) {
+        int i = 0;
+        int j = s.length - 1;
+        while (i<j){
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i++;
+            j--;
+        }
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+    }
+
+
+
 
 
 
