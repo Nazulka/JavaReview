@@ -108,6 +108,35 @@ public class Map2 {
         return strings;  // <-- Don't forget to return the array!
     }
 
+    public String[] firstSwap(String[] strings) {
+        Map<String, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < strings.length; i++) {
+            String s = strings[i];
+            String first = String.valueOf(s.charAt(0));
+
+            if (map.containsKey(first)) {
+                int prevIndex = map.get(first);
+
+                if (prevIndex != -1) {   // Only swap if not marked as done
+                    // swap
+                    String temp = strings[i];
+                    strings[i] = strings[prevIndex];
+                    strings[prevIndex] = temp;
+
+                    // Mark as done
+                    map.put(first, -1);
+                }
+
+            } else {
+                map.put(first, i);  // store first occurrence
+            }
+        }
+
+        return strings;
+    }
+
+
 
 
 
