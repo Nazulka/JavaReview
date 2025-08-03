@@ -79,7 +79,6 @@ public class LeetCode {
         int row=0;
         int col=0;
         for (String command : commands) {
-            // think as if it is a one dimensional array
             if (command.equals("UP")) {
                 row--; // same as -3
             } else if (command.equals("DOWN")) {
@@ -93,6 +92,45 @@ public class LeetCode {
         }
         return row*n+col;
     }
+
+    public int finalPositionOfSnake2(int n, List<String> commands) {
+        int number =0;
+        for (String command : commands) {
+            // think as if it is a one dimensional array
+            if (command.equals("UP")) {
+                number -=n;
+            } else if (command.equals("DOWN")) {
+                number +=n;
+            } else if (command.equals("RIGHT")) {
+                number++;
+            } else if (command.equals("LEFT")) {
+                number--;
+            }
+        }
+        return number;
+    }
+
+    public int removeElement27(int[] nums, int val) {
+        int index=0;
+        for (int i=0; i<nums.length; i++) {
+            if (nums[i] != val) {
+                nums [index] = nums[i];
+                index++;
+            }
+        }
+        // i          *
+        // indices    0  1  2  3  4  5
+        // nums      [2, 3, 1, 1, 0, 2]
+
+        // val = 0
+        // index = 0
+
+        // final_ans [2, 3, 1, 2, _, _]
+        // 4 indices (from 0 to 3) are occupied non-val elements
+        return index;
+    }
+
+
 
 
 
