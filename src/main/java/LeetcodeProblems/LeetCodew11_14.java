@@ -196,10 +196,23 @@ public class LeetCodew11_14 {
         int [][] arr = new int [m][n];
         int current_index = 0;
         for (int i=0; i<m; i++) { // top to bottom
-            for (int j=0; j<n; j++) { //left ot right over the columns
+            for (int j=0; j<n; j++) { //left to right over the columns
                 arr [i][j] = original[current_index];
+                // ans[0][0] → first row, first column
+                // original[0] → first number in the 1D array → 1
                 current_index++;
             }
+        }
+        return arr;
+    }
+
+    public int[][] construct2DArray2(int[] original, int m, int n) {
+        if (original.length != m*n){
+            return new int[0][0];
+        }
+        int [][] arr = new int [m][n];
+        for (int i=0; i<original.length; i++) {
+            arr[i/n][i%n] = original[i];
         }
         return arr;
     }
