@@ -2,7 +2,7 @@ package LeetcodeProblems;
 
 import java.util.Arrays;
 
-public class LeetCode {
+public class LeetCodew11_14 {
     public int maxProfit(int[] prices) {
         int lowest_price_so_far = prices[0];
         int highest_profit = 0;
@@ -120,7 +120,7 @@ public class LeetCode {
         }
         // i          *
         // indices    0  1  2  3  4  5
-        // nums      [2, 3, 1, 1, 0, 2]
+        // nums      [2, 3, 1, 2, 0, 2]
 
         // val = 0
         // index = 0
@@ -128,6 +128,33 @@ public class LeetCode {
         // final_ans [2, 3, 1, 2, _, _]
         // 4 indices (from 0 to 3) are occupied non-val elements
         return index;
+    }
+
+    public int reverseBits(int n) {
+        // treat n as an unsigned value - as a binary number
+        int result = 0;
+        for (int i=0; i<=31; i++) {
+            int bit = (n>>i) &1;
+            if (bit==1) { // if n's i-th bit is true, then
+                result |=1 << (31-i); // set true the result's (31-i)-th bit
+            }
+        }
+        return result;
+    }
+
+    public int firstUniqChar387(String s) {
+        int freq[] = new int[26];
+        for (int i=0; i<s.length(); i++) {
+            char c = s.charAt(i);
+            freq[c-'a']++;
+        }
+        for (int i=0; i<s.length(); i++) {
+            char c = s.charAt(i);
+            if (freq[c-'a'] == 1) {
+                return i;
+            }
+        }
+        return -1;
     }
 
 
