@@ -217,6 +217,55 @@ public class LeetCodew11_14 {
         return arr;
     }
 
+    class Solution {
+        public String longestCommonPrefix(String[] strs) {
+            if (strs == null || strs.length==0) {
+                return "";
+            }
+            // initialise 'prefix' with the longest possible prefix
+            // prefix cannot be longer then any of the strings, so we take the 1st string
+            // and initialise with strs[0];
+            String prefix=strts[0];
+
+            // Iterate over all strings
+            for (int i=1; i<strs.length; i++) {
+                // until 'prefix' is not a prefix of the current string
+                // reduce 'prefix' by one character and try to match again
+                while (strs[i].indexOf(prefix) !=0) {
+                    // removing the last character from 'prefix'
+                    prefix = prefix.substring(0, prefix.length()-1);
+                }
+            }
+            // return found 'prefix' as it is a prefix of all strings in the list
+            return prefix;
+        }
+    }
+
+
+    public String longestCommonPrefix14(String[] strs) {
+        if (strs == null || strs.length==0) {
+            return "";
+        }
+        // initialise 'prefix' with the longest possible prefix
+        // prefix cannot be longer then any of the strings, so we take the 1st string
+        // and initialise with strs[0];
+        String prefix=strs[0];
+
+        // Iterate over all strings
+        for (int i=1; i<strs.length; i++) {
+            // until 'prefix' is not a prefix of the current string
+            // reduce 'prefix' by one character and try to match again
+            while (strs[i].indexOf(prefix) !=0) {
+                // This means the current string does NOT start with the current prefix
+                // removing the last character from 'prefix'
+                prefix = prefix.substring(0, prefix.length()-1);
+                if (prefix.isEmpty()) return ""; // no common prefix
+            }
+        }
+        // return found 'prefix' as it is a prefix of all strings in the list
+        return prefix;
+    }
+
 
 
 
