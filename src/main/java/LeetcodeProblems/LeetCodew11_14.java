@@ -158,6 +158,38 @@ public class LeetCodew11_14 {
     }
 
 
+    public int firstUniqChar(String s) {
+        int bestIndex=1000000000;
+        for (char c='a'; c<='z'; c++) {
+            int first = s.indexOf(c);
+            int last = s.lastIndexOf(c);
+            if (first != -1 && first == last) {
+                bestIndex = Math.min(bestIndex, first);
+            }
+        }
+        if (bestIndex == 1000000000) bestIndex = -1;
+        return bestIndex;
+    }
+
+    public int removeDuplicates26(int[] nums) {
+        // start from one as 0 is nin-duplicate
+        int j=1;
+        // we will put non-duplicates at p[ositions
+        // 0, 1, 2, 4 etc one bu one
+        for (int i=1; i<nums.length; i++) {
+            if (nums[i]==nums[i-1]) {
+                // if it's a duplicate, skip it
+                continue;
+            }
+// otherwise (n) put it at index j,
+            // and then increment j
+            nums[j] = nums[i];
+            j++;
+        }
+        return j;
+    }
+
+
 
 
 
