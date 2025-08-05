@@ -328,6 +328,39 @@ public class LeetCodew11_14 {
         }
     }
 
+    public int[] pivotArray2161(int[] nums, int pivot) {
+        int n = nums.length;
+        int [] result  = new int[n];
+        int insertPosition = 0;
+        // the arr will be split into 3 blocks
+        // [(numbers<pivot), (number=pivot), (numbers>pivot)]
+
+        int pivotFreq = 0;
+        for (int num: nums) {
+            if (num<pivot) {
+                result[insertPosition]=num;
+                insertPosition++;
+            } else if (num == pivot) {
+                pivotFreq++;
+            }
+        }
+        // insert all num=pivot
+        while (pivotFreq > 0) {
+            result[insertPosition]=pivot;
+            insertPosition++;
+            pivotFreq--;
+        }
+
+        // after that, insert the rest, all num>pivot
+        for (int num:nums) {
+            if (num>pivot) {
+                result[insertPosition]=num;
+                insertPosition++;
+            }
+        }
+        return result;
+    }
+
 
 
 
