@@ -260,6 +260,52 @@ public class LeetCodew11_14 {
         }
     }
 
+//    class Solution {
+        public boolean backspaceCompare844(String s, String t) {
+            return build(s).equals(build(t));
+        }
+// private class inside
+        private String build(String str) {
+            StringBuilder buildStr = new StringBuilder();
+            for (char c : str.toCharArray()) {
+                if (c != '#') { // if it's not a # char, append it
+                    buildStr.append(c);
+                } else { // if it's a #
+                    if (!buildStr.isEmpty()) { // if buildStr isn't empty
+                        buildStr.deleteCharAt(buildStr.length()-1);
+                        // remove last char
+                    }
+                }
+            }
+            return buildStr.toString();
+            // convert the string builder class to string and return it
+        }
+//    }
+
+    public int removeDuplicates(int[] nums) {
+        // to find out if the number is a 3rd occurence - duplicate,
+        // check the prev 2 elements
+
+        // Numbers nums[0] and nums[1] will stay where they are
+        // if we were checking if there were 3 occurences, we'd start from
+        // insertPosition =3
+        // and change this line to 3:
+        //if (nums[i] != nums[insertPosition - 3]) {
+        // and start the for loop from i=3
+        int insertPosition = 2;
+
+        // we will iterate over numbers starting from i=2
+        // and numbers we need at insertPosition one by one
+        for (int i=2; i<nums.length; i++) {
+            if (nums[i] != nums[insertPosition - 2]) {
+                nums[insertPosition++] = nums[i];
+            }
+        }
+        return insertPosition;
+    }
+
+
+
 
 
 
