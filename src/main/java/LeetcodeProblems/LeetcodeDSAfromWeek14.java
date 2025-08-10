@@ -31,15 +31,16 @@ public class LeetcodeDSAfromWeek14 {
         return false;
     }
 
-    public boolean containsNearbyDuplicateB(int[] nums, int k) {
-        Set<Integer> newSet = new HashSet<Integer>();
-        for (int i=0; i<i+k; i++) {
-
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Set<Integer> newSet = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
             if (newSet.contains(nums[i])) {
                 return true;
             }
             newSet.add(nums[i]);
-            window.newSet(nums[i - k]);
+            if (newSet.size() > k) {
+                newSet.remove(nums[i - k]);
+            }
         }
         return false;
     }
