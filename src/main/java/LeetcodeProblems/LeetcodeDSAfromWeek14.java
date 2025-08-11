@@ -46,6 +46,55 @@ public class LeetcodeDSAfromWeek14 {
     }
 
 
+    // Solved in class with Shabdan
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> result = new HashSet<Integer>();
+        for (int i=0; i<nums1.length; i++) {
+            for (int j=0; j<nums2.length; j++) {
+                if (nums1[i]==nums2[j]) {
+                    result.add(nums1[i]);
+                }
+            }
+        }
+        int[] arrResult = new int[result.size()];
+        int index=0;
+        for (int num:result) {
+            arrResult[index++]=num;
+        }
+        return arrResult;
+    }
+
+        public int[] intersectionOptimised(int[] nums1, int[] nums2) {
+            int n = nums1.length;
+            int m = nums2.length;
+            Set<Integer> set_1 = new HashSet<Integer>();
+            Set<Integer> ans = new HashSet<Integer>();
+
+            for (int i = 0; i < n; i++) {
+                set_1.add(nums1[i]); // O(1) in average
+            }
+            // O(n)
+
+            for (int i = 0; i < m; i++) {
+                if (set_1.contains(nums2[i])) { // O(1) in average
+                    ans.add(nums2[i]); // O(1) in average
+                }
+            }
+            // O(m)
+
+
+            int[] answer = new int[ans.size()];
+
+            int ind = 0;
+            for (Integer x : ans) {
+                answer[ind] = x;
+                ind++;
+            }
+            return answer;
+        }
+
+
+
 
 
 
