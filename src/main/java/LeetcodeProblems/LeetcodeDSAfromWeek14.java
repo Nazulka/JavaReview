@@ -116,6 +116,24 @@ public class LeetcodeDSAfromWeek14 {
         return result;
     }
 
+    public int thirdMax414(int[] nums) {
+        TreeSet<Integer> newSet = new TreeSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            newSet.add(nums[i]);
+        }
+        Iterator<Integer> it = newSet.descendingIterator();
+        int count = 0;
+        while (it.hasNext()) {
+            int num = it.next();
+            count++;
+            // do something with num
+            if (count == 3) {
+                return num; // 3rd largest
+            }
+        }
+        return newSet.last();
+    }
+
 
 
 
