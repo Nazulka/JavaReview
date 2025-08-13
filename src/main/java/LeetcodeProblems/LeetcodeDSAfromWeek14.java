@@ -93,6 +93,29 @@ public class LeetcodeDSAfromWeek14 {
             return answer;
         }
 
+    public List<String> summaryRanges228(int[] nums) {
+        List<String> result = new ArrayList<>();
+        if (nums == null || nums.length == 0) return result;
+
+        int start = 0; // start index of the current range
+
+        for (int i = 0; i < nums.length; i++) {
+            // Check if we are at the last element or the next number breaks the consecutive sequence
+            if (i == nums.length - 1 || nums[i] + 1 != nums[i + 1]) {
+                if (start == i) {
+                    // Single number range
+                    result.add(String.valueOf(nums[start]));
+                } else {
+                    // Multiple number range
+                    result.add(nums[start] + "->" + nums[i]);
+                }
+                start = i + 1; // Move start to the next potential range
+            }
+        }
+
+        return result;
+    }
+
 
 
 
