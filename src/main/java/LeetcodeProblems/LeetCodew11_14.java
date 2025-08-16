@@ -400,6 +400,41 @@ public class LeetCodew11_14 {
         return res;
     }
 
+    public int longestPalindrome409(String s) {
+        // look at the first element, put in a hashset until we find a
+        // pair, once a pair found put one in the beginning and one in the end
+        // of the palindrome
+
+
+        if (s==null || s.length() == 0) {
+            return 0;
+        }
+        HashSet<Character> hash_set = new HashSet<Character>();
+        int palindrome_length = 0;
+        for (char ch : s.toCharArray()) {
+            if (hash_set.contains(ch)) {
+                //found a pair of characters 'ch'
+                // increase the palindrome_length by 2
+                // and remove 'ch' from hash set
+                hash_set.remove(ch);
+                palindrome_length +=2;
+
+            } else {
+                // character 'ch' doesn't have a pair yet
+                // so put it in the hash set for now
+                hash_set.add(ch);
+            }
+        }
+        // if hash set is not empty it means there are charachters
+        // which we couldn't pair
+        // We can use one element and insert it in the middle of the palidrome
+        if (!hash_set.isEmpty()) {
+            palindrome_length++;
+        }
+        return palindrome_length;
+
+    }
+
 
 
 
