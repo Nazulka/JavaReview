@@ -434,6 +434,8 @@ public class LeetCodew11_14 {
         return palindrome_length;
 
     }
+    // W13 – Java Session 4 – Problem 3/6
+
     public String addBinary67(String a, String b) {
         StringBuilder res = new StringBuilder();
         int i = a.length() - 1; // equals the last char of a
@@ -446,11 +448,36 @@ public class LeetCodew11_14 {
             if (j >= 0)
                 sum += b.charAt(j--) - '0';
             // if sum>1 it's 1, otherwise 0
-            carry = sum > 1 ? 1 : 0;
-            res.append(sum % 2);
+            carry = sum / 2; // for decimals /10
+            // you can use this algorithm for decimal numbers
+            // by replacing 2s with 10s
+            res.append(sum % 2); // for decimals /10
         }
         // reverse the string builder and convert it to a string
         return res.reverse().toString();
+    }
+
+    // W13 – Java Session 4 – Problem 4/6
+    public int[] sortedSquares977(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+
+        // two pointers, one at the beginning, one at the end
+        int left = 0;
+        int right = n-1;
+        for (int insertPosition = n-1; insertPosition >=0; insertPosition--) {
+            // the next maximum largest square is either
+            // nums[left]^2 or nums[right]^2 >>> choose the largest
+            // and put it in result[insertPosition]
+            if (Math.abs(nums[left]) > Math.abs(nums[right])) {
+                result[insertPosition] = nums[left] * nums[left];
+                left++;
+            } else {
+                result[insertPosition] = nums[right] * nums[right];
+                right--;
+            }
+        }
+        return result;
     }
 
 
