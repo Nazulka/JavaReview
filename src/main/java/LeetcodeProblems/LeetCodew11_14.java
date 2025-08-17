@@ -434,6 +434,24 @@ public class LeetCodew11_14 {
         return palindrome_length;
 
     }
+    public String addBinary67(String a, String b) {
+        StringBuilder res = new StringBuilder();
+        int i = a.length() - 1; // equals the last char of a
+        int j = b.length() - 1; // equals the last char of b
+        int carry = 0;
+        while (i >= 0 || j >= 0 || carry > 0) {
+            int sum = carry;
+            if (i >= 0)
+                sum += a.charAt(i--) - '0'; // 0 has an asci code of 48
+            if (j >= 0)
+                sum += b.charAt(j--) - '0';
+            // if sum>1 it's 1, otherwise 0
+            carry = sum > 1 ? 1 : 0;
+            res.append(sum % 2);
+        }
+        // reverse the string builder and convert it to a string
+        return res.reverse().toString();
+    }
 
 
 
