@@ -480,6 +480,30 @@ public class LeetCodew11_14 {
         return result;
     }
 
+    // W13 – Java Session 4 – Problem 5/6
+    public void sortColors75(int[] nums) {
+        int pos = 0;
+        // the array will have 3 blocks, [zeros, ones, twos]
+        // 1. Move all 0s to the beginning of the array (to form 'zeros' block)
+        for (int i=0; i< nums.length; i++) {
+            if (nums[i] <1) swap(nums, i, pos++);
+        }
+
+        // 2. pos points at the beginning of 'ones' block
+        // move all 1s to the 'ones' block
+        for (int i=0; i<nums.length; i++) {
+            if (nums[i] ==1) swap(nums, i, pos++);
+        }
+        // we don't need to do anything  else since 'zeros' and 'ones' blocks are
+        // formed, which means 'twos' block is already formed as well
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
 
 
 
