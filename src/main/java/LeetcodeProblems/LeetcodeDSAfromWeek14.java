@@ -118,8 +118,8 @@ public class LeetcodeDSAfromWeek14 {
 
     public int thirdMax414(int[] nums) {
         TreeSet<Integer> newSet = new TreeSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            newSet.add(nums[i]);
+        for (int j : nums) {
+            newSet.add(j);
         }
         Iterator<Integer> it = newSet.descendingIterator();
         int count = 0;
@@ -133,6 +133,53 @@ public class LeetcodeDSAfromWeek14 {
         }
         return newSet.last();
     }
+
+// Week 14 – Arrays Part 1/2 – HW Minimal, Problem 1
+    // Azret's lecture DS&A
+    public void rotate189(int[] nums, int k) {
+        int n=nums.length;
+
+        // rotating k=p*n+q times is equivelent to
+        // rotating g just q times
+        // q=k%n
+        // Hence, replace k with q, i.e. k=k%n
+        k %=n;
+
+        // let nums = [1, 2, 3, 4, 5, 6, 7]
+        // and k=3
+
+        // reverse the whole array
+        // nums = [**7, 6, 5, 4, 3, 2, 1**]
+        reverse (nums, 0, nums.length-1);
+
+        // reverse the first k element of the array
+        // nums = [**5, 6, 7**, 4, 3, 2, 1]
+        reverse(nums, 0, k-1);
+
+        // reverse the rest of the array
+        // nums = [**5, 6, 7**, 4, 3, 2, 1]
+        reverse(nums, k, nums.length-1);
+
+        // Final result = [5, 6, 7, 1, 2, 3, 4] as intended
+    }
+    // Simple (sub-array reversing algorithm)
+
+
+
+    public void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            // swap[nums[start], nums[end]];
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end]=temp;
+
+            // move to the next pair of numbers
+            start++;
+            end--;
+        }
+    }
+
+
 
 
 
