@@ -246,7 +246,55 @@ public class LeetcodeDSAfromWeek14 {
         }
     }
 
+    public int[] sortedSquares977(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+        int pos = n-1;
+        int left = 0;
+        int right = nums.length - 1;
+        while(left<=right) {
+            if (Math.abs(nums[left]) >= Math.abs(nums[right])) {
+                result[pos] = nums[left]*nums[left];
+                left++;
+            } else {
+                result[pos] = nums[right]*nums[right];
+                right--;
+            }pos--;
+        }
+        return result;
+    }
 
+    // Week 14 – Arrays Part 1/2 – HW Minimal, Problem 4
+    public int[] sortArrayByParityII922(int[] nums) {
+
+        int i = 0;
+        int j = 1;
+        int n = nums.length;
+
+        while (i<n && j<n) {
+            // find the next odd integer at an even position
+            while (i<n && nums[i]%2==0) {
+                i+=2;
+            }
+            // find the next even integer at an odd position
+            while (j<n && nums[j]%2==1) {
+                j+=2;
+            }
+            // if both found swap them
+            if (i<n && j<n) {
+                swap(nums, i, j);
+            }
+        }
+        return nums;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j]=temp;
+    }
+
+// ====================================================
 
 
 
