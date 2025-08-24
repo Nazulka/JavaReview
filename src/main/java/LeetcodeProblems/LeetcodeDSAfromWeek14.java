@@ -432,6 +432,37 @@ class NumMatrix {
         }
     }
 
+ //   Week 15 – Arrays Part 2/2 – Floyd's Tortoise and Hare Algorithm
+// need to revisit again
+
+    public class Solution {
+        public ListNode detectCycle142(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast != null && fast.next != null) {
+                slow=slow.next;
+                fast=fast.next.next;
+
+                if (slow == fast) {
+                    // they met at the meeting point
+                    // note that we don't know any of a, b, x, y and L
+                    break;
+                }
+            }
+            if (fast == null || fast.next == null) {
+                // there was no cycle in the linked list
+                return null;
+            }
+            slow = head;
+            while (slow != fast) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            return slow;
+        }
+    }
+
+
 
 
 
