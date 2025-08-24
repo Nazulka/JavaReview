@@ -398,6 +398,40 @@ class NumMatrix {
  * int param_1 = obj.sumRegion(row1,col1,row2,col2);
  */
 
+    /**
+     * Definition for singly-linked list.
+     * class ListNode {
+     *     int val;
+     *     ListNode next;
+     *     ListNode(int x) {
+     *         val = x;
+     *         next = null;
+     *     }
+     * }
+     */
+
+
+    // Week 15 – Arrays Part 2/2 – Floyd's Tortoise and Hare Algorithm
+
+    public class Solution {
+        public boolean hasCycle(ListNode head) {
+            ListNode slow = head;
+            ListNode fast = head;
+            while (fast != null && fast.next != null) {
+                slow=slow.next;
+                fast=fast.next.next;
+            }
+            if (slow == fast) {
+                // they met, there's a cycle
+                return true;
+            }
+            // if fast pointer reached null or fast.next is null, which means end of the
+            // linked list. So, there's no cycle in the linked list - return false
+            return false;
+
+        }
+    }
+
 
 
 
