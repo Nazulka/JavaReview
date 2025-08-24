@@ -345,6 +345,70 @@ public class LeetcodeDSAfromWeek14 {
  */
 
 
+class NumMatrix {
+    // Week 14 – Arrays Part 1/2 – HW Recommended, Problem 1
+    int [][] sum;
+    // matrix[row][column]
+    public NumMatrix304(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+// sum [i][j] is the sum of all elements
+// inside the prefix-submatrix matrix[1..i][1 .. j]
+
+// sum is a 1 indexed matrix whereas matrix is 0-indexed
+// this is intentional to simplify computations
+// if you make sum matrix 0-indexed, you'll have to
+// write many if statements to check that you didn't go out of bounds
+// assume its 0-th row (sum[0][...]) and 0-th column (sum[...][0]) are filled with zeroes
+// that greatly simplifies the computations
+
+        sum = new int [m+1][n+1];
+//for (int r = 0; r < rows; r++)
+// for (int c = 0; c < cols; c++)
+        for (int i=1; i<=m; i++) {
+            for (int j=1; j<=n; j++) {
+                // sum of all elems from (1, 1) till (i, j) =
+                sum[i][j]=
+                        (sum[i-1][j] +
+                                sum[i][j-1] - // (because they were added twice)
+                                sum[i-1][j-1]) +
+                                matrix[i-1][j-1]; // because matrix is actually 0-indexed
+            }
+        }
+    }
+
+    public int sumRegion(int row1, int col1, int row2, int col2) {
+        // since our sum matrix is 0-indexed and given r1, c1, r2, c2 are 0-indexed,
+        // we increase all by 1
+        row1++;
+        col1++;
+        row2++;
+        col2++;
+        return (sum[row2][col2] -
+                sum[row2][col1-1] -
+                sum[row1-1][col2] +
+                sum[row1-1][col1-1]);
+    }
+}
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix obj = new NumMatrix(matrix);
+ * int param_1 = obj.sumRegion(row1,col1,row2,col2);
+ */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
