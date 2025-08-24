@@ -296,7 +296,53 @@ public class LeetcodeDSAfromWeek14 {
 
 // ====================================================
 
+    class NumArray {
+        // Week 14 – Arrays Part 1/2 – HW Minimal, Problem 5 leetcode 303
+// go through again!
+        private int[] prefix;
 
+        public NumArray(int[] nums) {
+            int n = nums.length;
+            // prefix array is 1-indexed because it greatly simplifies computations
+            // if prefix array would be 0-indexed, we'd have to always consider the case
+            // when i=0 or left =0 separately, so we don't gp out of bounds
+            prefix = new int[n+1];
+            // prefix[0 . .. n]
+
+            // prefix[0]=0 because it is semantically equal to an empty prefix (which has zero sum)
+            prefix[0]=0;
+            for (int i=1; i<=n; i++) {
+                // prefix[i]=
+                //           sum(nums[1.. i-1]) +
+                //           nums[i]
+                prefix[i] = prefix[i-1]+nums[i-1];
+                // nums[i-1] (not nums[i] because nums array is 0-indexed)
+            }
+        }
+
+        public int sumRange(int left, int right) {
+            // increment by 1 because 'prefix' array is 1-indexed
+            left++;
+            right++;
+            // nums[left] + ... + nums[right]
+            //=
+            // sum(nums[1.. right])-
+            // sum(nums[1 .. left-1]) =
+            // sum(nums[left .. right])
+            return prefix[right] - prefix[left-1];
+        }
+    }
+
+/** ["NumArray", "sumRange", "sumRange", "sumRange"]
+ [[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
+ Output
+ [null, 1, -1, -3] **/
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray obj = new NumArray(nums);
+ * int param_1 = obj.sumRange(left,right);
+ */
 
 
 
