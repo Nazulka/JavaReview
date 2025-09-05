@@ -175,7 +175,7 @@ public class LeetCodew11_14 {
     public int removeDuplicates26(int[] nums) {
         // start from one as 0 is nin-duplicate
         int j=1;
-        // we will put non-duplicates at p[ositions
+        // we will put non-duplicates at positions
         // 0, 1, 2, 4 etc one bu one
         for (int i=1; i<nums.length; i++) {
             if (nums[i]==nums[i-1]) {
@@ -514,6 +514,18 @@ public class LeetCodew11_14 {
             else if (stack.isEmpty() || stack.pop() !=c) return false;
         }
         return stack.isEmpty();
+
+
+        public boolean containsDuplicate(int[] nums) {
+            Set<Integer> newSet = new HashSet<Integer>();
+            for (int i=0; i<nums.length; i++) {
+
+                if (newSet.contains(nums[i])) {
+                    return true;
+
+                }  newSet.add(nums[i]);
+            }return false;
+        }
 
 
 
