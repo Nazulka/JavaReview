@@ -32,7 +32,20 @@ public class DSandAlgo {
             }
         }
 
-        return result;
-    }
+        return r
+
+
+        // problem 268 Missing Number
+        public int missingNumber(int[] nums) {
+            int n = nums.length;
+            int expectedSum = n * (n + 1) / 2; // sum of 0..n
+            int actualSum = 0;
+            for (int num : nums) {
+                actualSum += num; // sum of array
+            }
+            return expectedSum - actualSum; // missing number
+        }
+
+
 
 }
