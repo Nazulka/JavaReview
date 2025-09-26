@@ -1,5 +1,7 @@
 package LeetcodeProblems;
 
+import java.lang.classfile.components.ClassPrinter;
+
 public class LeetcodeDSAfromWeek14 {
     public int searchInsert(int[] nums, int target) {
         for (int i=0; i<nums.length; i++) {
@@ -464,7 +466,7 @@ class NumMatrix {
 
 
 // Shabdan's lecture 26.08
-    class Solution {
+
         public int mySqrt(int x) {
             int left = 0;
             int right = x;
@@ -485,7 +487,76 @@ class NumMatrix {
             }
             return result;
         }
+
+     // problem 19 Leetcode solved by Shabdan
+     // Definition for singly-linked list node
+     class ListNode {
+         int val;
+         ListNode next;
+
+         ListNode() {}
+         ListNode(int val) { this.val = val; }
+         ListNode(int val, ListNode next) {
+             this.val = val;
+             this.next = next;
+         }
+     }
+
+// problem 19 leetcode Sahbdan 25.09.25
+        public ListNode removeNthFromEnd(ListNode head, int n) {
+            // Step 1: calculate length of the linked list
+            int len = 0;
+            ListNode cur = head;
+            while (cur != null) {
+                cur = cur.next;
+                len++;
+            }
+
+            // Step 2: find nth node from start
+            n = len - n + 1;
+            ListNode parent = null;
+            cur = head;
+
+            for (int i = 1; i < n; i++) {
+                parent = cur;
+                cur = cur.next;
+            }
+
+            // Step 3: delete the node
+            if (cur == head) {
+                head = cur.next;
+            } else {
+                parent.next = cur.next;
+            }
+            return head;
+        }
     }
+
+//    public class Main {
+//        public static void main(String[] args) {
+//            // Build a sample list: 1 → 2 → 3 → 4 → 5
+//            ListNode n5 = new ListNode(5);
+//            ListNode n4 = new ListNode(4, n5);
+//            ListNode n3 = new ListNode(3, n4);
+//            ListNode n2 = new ListNode(2, n3);
+//            ListNode head = new ListNode(1, n2);
+//
+//            // Call the solution
+//            Solution sol = new Solution();
+//            head = sol.removeNthFromEnd(head, 2);  // remove 2nd from end (node 4)
+//
+//            // Print updated list
+//            ListNode cur = head;
+//            while (cur != null) {
+//                System.out.print(cur.val + " ");
+//                cur = cur.next;
+//            }
+//            // Output should be: 1 2 3 5
+//        }
+//    }
+
+
+
 
 
 
