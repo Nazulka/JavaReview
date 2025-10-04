@@ -221,7 +221,7 @@ public class Array1 {
         return nums;
     }
 
-    public int[] (int[] nums) {
+    public int[] rr(int[] nums) {
         if (nums.length<2) return nums;
         else return new int[] {nums[0], nums[1]};
     }

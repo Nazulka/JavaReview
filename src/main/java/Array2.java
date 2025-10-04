@@ -39,10 +39,52 @@ public class Array2 {
             } else if (nums[i]==4) {
                 fours++;
             }
-        } if (ones>fours) {
-            return true;
+        }
+        return ones > fours;
+    }
+
+    public boolean either24(int[] nums) {
+        boolean hasTwoPair = false;
+        boolean hasFourPair = false;
+        for (int i=0; i<nums.length-1; i++) {
+            if (nums[i]==2 && nums[i+1]==2) {
+                hasTwoPair=true;
+            } else if (nums[i]==4 && nums[i+1]==4) {
+                hasFourPair=true;
+            }
+        }
+        return hasTwoPair ^ hasFourPair;
+    }
+
+    public boolean has77(int[] nums) {
+        for (int i=0; i<nums.length-1; i++) {
+            if (nums[i]==7 && nums[i+1]==7 ) {
+                return true;
+            }
+        }
+        for (int i=0; i<nums.length-2; i++) {
+            if (nums[i]==7 && nums[i+2]==7 ) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean has12(int[] nums) {
+        boolean foundOne = false;
+        boolean foundTwo=false;
+        for (int i=0; i<nums.length-1; i++) {
+            if (nums[i]==1) {
+                foundOne=true;
+            }
+            if (nums[i+1]==2 && foundOne) {
+                return true;
+            }
         } return false;
     }
+
+
+
 
 
 }

@@ -1,5 +1,7 @@
 package LeetcodeProblems;
 
+import java.util.ArrayList;
+
 public class DSandAlgo {
     // print yes if you can get 1 from N, No if not
 
@@ -10,9 +12,9 @@ public class DSandAlgo {
 
 
     // 448. Find All Numbers Disappeared in an Array
-    public List<Integer> findDisappearedNumbers(int[] nums) {
+    public ArrayList<Object> findDisappearedNumbers(int[] nums) {
         int n = nums.length;
-        List<Integer> result = new ArrayList<>();
+        ArrayList<Object> result = new ArrayList<>();
 
         // check each number from 1..n
         for (int i = 1; i <= n; i++) {
@@ -31,8 +33,8 @@ public class DSandAlgo {
                 result.add(i);
             }
         }
-
-        return r
+        return result;
+    }
 
 
         // problem 268 Missing Number
@@ -45,6 +47,18 @@ public class DSandAlgo {
             }
             return expectedSum - actualSum; // missing number
         }
+
+    public boolean isEverywhere(int[] nums, int val) {
+        for (int i=0; i<nums.length-1; i++) {
+            if (val!=nums[i] && val!=nums[i+1]) {
+                return false;
+            }
+        }return true;
+    }
+
+
+
+
 
 
 
