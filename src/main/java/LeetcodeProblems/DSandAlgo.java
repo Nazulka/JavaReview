@@ -56,6 +56,20 @@ public class DSandAlgo {
         }return true;
     }
 
+    public boolean twoTwo(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 2) {
+                // Check if it has a 2 before or after
+                boolean hasPrev = (i > 0 && nums[i - 1] == 2);
+                boolean hasNext = (i < nums.length - 1 && nums[i + 1] == 2);
+                if (!hasPrev && !hasNext) {
+                    return false; // isolated 2 found
+                }
+            }
+        }
+        return true;
+    }
+
 
 
 
