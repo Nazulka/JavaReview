@@ -532,6 +532,30 @@ class NumMatrix {
         }
     }
 
+public int[] dailyTemperatures739(int[] temperatures) {
+    int n = temperatures.length;
+    int[] ans = new int[n];
+    HashMap<Integer, Integer> hs = new HashMap<>();
+
+    for (int i=n-1; i>=0; i--) {
+        int minDay=n+1;
+        for (int j = temperatures[i]+1; j<=100; j++) {
+            if (hs.containsKey(j)) {
+                minDay = Math.min(minDay, hs.get(j));
+            }
+        }
+        if (minDay==n+1) {
+            ans[i] = 0;
+        } else {
+            ans[i]=minDay-i;
+        }
+        hs.put(temperatures[i], i);
+    }
+    return ans;
+}
+
+
+
 //    public class Main {
 //        public static void main(String[] args) {
 //            // Build a sample list: 1 → 2 → 3 → 4 → 5
