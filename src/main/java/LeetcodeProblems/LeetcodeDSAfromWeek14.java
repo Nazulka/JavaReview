@@ -554,6 +554,25 @@ public int[] dailyTemperatures739(int[] temperatures) {
     return ans;
 }
 
+// O(n)
+public int[] dailyTemperatures(int[] temperatures) {
+    int n = temperatures.length;
+    int[] answer = new int[n];
+    Stack<Integer> s = new Stack<>();
+    for (int i=n-1; i>=0; i--) {
+        while (!s.isEmpty() && temperatures[s.peek()] <= temperatures[i]) {
+            s.pop();
+        }
+        if (s.isEmpty()) {
+            answer[i]=0;
+        } else {
+            answer[i]=s.peek()-i;
+        }
+        s.push(i);
+    }
+    return answer;
+}
+
 
 
 //    public class Main {
